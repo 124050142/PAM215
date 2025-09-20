@@ -1,12 +1,10 @@
 public class inicioPAM{
     public String ReglamentoPOO(){
-        return "Participacion Activa en clase.\n Trabajos de Classroom.\n
-         Entregas Completas.\n Respetar Tiempo de Entrega.\n Trabajos de Calidad.";
+        return "Participacion Activa en clase.\n Trabajos de Classroom.\n Entregas Completas.\n Respetar Tiempo de Entrega.\n Trabajos de Calidad.";
     }
 
     public String LineamientosClassroom(){
-        return "1. Se requiere 80% de asistencia para tener derecho a evaluacion de parcial
-        y 80% de trabajos en clase.\n 
+        return "1. Se requiere 80% de asistencia para tener derecho a evaluacion de parcialy 80% de trabajos en clase.\n 
         2. Se permiten 10 minutos de tolerancia y si el alumno llega despues de este tiempo puede permanecer en la clase, pero no se tomará la asistencia (Solamente en los horarios de inicio: 7:00a.m y 14:00p.m).\n
         3.Las faltas deberán estar justificadas mediante el correo institucional con un plazo maximo de 24 horas posteriores a la hora e falta en clase mediante correo del tutor(a), justificantes entregados fuera de la fecha límite permitido no se aceptan, únicamente se aceptarán recetas médicas y citatorios jurídicos. (De forma física deben ser presentados al tutor para ser validos y de forma posterior emitidos).\n 
         4.Las tareas y trabajos deberán subirlas al classroom de forma individual y no se recibirán de manera extemporánea. (Salvo previo justificante validado por el tutor)\n 
@@ -14,9 +12,7 @@ public class inicioPAM{
         6.Utilizar el correo institucional para trabajar bajo la plataforma Google Classroom.\n
         7.El plagio o copia de trabajos y/o exámenes, será condicionado a reprobar a la asignatura y se reportará al área correspondiente.\n
         8.Cualquier deshonestidad académica será sancionada reprobando el parcial sin derecho a examen final.\n
-        9.En circunstancia de indisciplina o falta de respeto por parte del alumno hacia docentes, administrativos, compañeros
-        o cualquier persona perteneciente a la universidad, se realizará una primera llamada de atención, si el alumno hace caso
-        omiso tendrá que abandonar el aula, tres incidencias de este tipo el alumno no tendrá derecho a examen final o parcial.\n
+        9.En circunstancia de indisciplina o falta de respeto por parte del alumno hacia docentes, administrativos, compañeros o cualquier persona perteneciente a la universidad, se realizará una primera llamada de atención, si el alumno hace caso omiso tendrá que abandonar el aula, tres incidencias de este tipo el alumno no tendrá derecho a examen final o parcial.\n
         10.Uso de laptops y/o dispositivos móviles quedará limitados a uso exclusivo de las actividades que así lo requieran.\n
         11.Prohibido el uso de audifonos durante clase.\n
         12.Prohibido comer y/o tomar líquidos en el salón.\n
@@ -33,10 +29,7 @@ public class inicioPAM{
         }
 
      public String FechasdeParciales(){
-        return "1er Parcial: 29/09/25\n
-        2do Parcial: 03/11/25\n
-        3er Parcial: 01/12/25\n
-        Final: 08/12/25";
+        return "1er Parcial: 29/09/25\n 2do Parcial: 03/11/25\n 3er Parcial: 01/12/25\n Final: 08/12/25";
 
      }
      public String PorcentajesporParcial(){
