@@ -21,7 +21,7 @@ export default function ActivityScreen() {
           animating={true}
           hidesWhenStopped={true}
           />
-          <Text> Cargando...</Text>
+          <Text> Cargando....</Text>
 
       </View>
     </View>
