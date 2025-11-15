@@ -8,7 +8,8 @@ import ScrollScreen from './ScrollScreen';
 import ActivityScreen from './ActivityScreen'; 
 import FlatScreen from './FlatScreen';
 import ModalScreen from './ModalScreens'; 
-import BottonScreen from './BottonScreen';
+import BottomScreen from './BottomScreen';
+import RepasoScreen from './RepasoScreen';
 
 import { Button } from 'react-native-web';
 
@@ -34,8 +35,10 @@ export default function MenuScreen() {
             return <FlatScreen/>;
         case 'modal':  
             return <ModalScreen/>; 
-        case 'botton':
-            return <BottonScreen/>;
+        case 'bottom':
+            return <BottomScreen/>;
+        case 'Repaso':
+            return <RepasoScreen/>;
         
 
         case 'menu':
@@ -51,7 +54,8 @@ export default function MenuScreen() {
                     <Button onPress={()=>setScreen('activity')} title='Pract:Activity'/>
                     <Button onPress={()=>setScreen('flat')} title='Pract:Flat'/>
                     <Button onPress={()=>setScreen('modal')} title='Pract:Modal'/>
-                    <Button onPress={()=>setScreen('botton')} title='Pract:Botton'/>    
+                    <Button onPress={()=>setScreen('bottom')} title='Pract:Bottom'/>  
+                    <Button onPress={()=>setScreen('Repaso')} title='Pract:Repaso'/>  
 
                     
                     </View>
