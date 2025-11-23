@@ -6,7 +6,7 @@ export default function Settings({ navigation }) {
     <View style={styles.container}>
       <View style={styles.iconRow}>
         <Ionicons name="settings-outline" size={28} color="blue" />
-        <Text style={styles.title}> Configuraciones de usuario </Text>
+        <Text style={styles.title}>Configuraciones de usuario</Text>
       </View>
     </View>
   );
