@@ -30,39 +30,30 @@ class DatabaseService{
             `);
         }
     }
-
-    //La siguiente función de DatabaseServices, es la que usaremos
-    // para consultar, también preparada para la web y móvil
-
-    async getAll(){
-        if (Platform.OS === 'web'){
+         async getAll() {
+        if (Platform.OS === 'web') {
             const data = localStorage.getItem(this.storageKey);
             return data ? JSON.parse(data) : [];
-        }else{
-            return await this.db.getAllAsync('SELECT * FROM usuarios ORDER BY id DESC');
+        } else {
+            return await this.db.getAllAsync("SELECT * FROM usuarios ORDER BY id DESC;");
         }
     }
 
-    //Finalizamos el este archivo con la función para insertar
-    // ,también preparada para la web y móvil y la exportación de la
-    // clase
-
-    async add(nombre){
-        if(Platform.OS === 'web'){
+        async add(nombre) {
+        if (Platform.OS === 'web') {
             const usuarios = await this.getAll();
-
-            const nuevoUsuario = {
+            const nuevo = {
                 id: Date.now(),
                 nombre,
-                fecha_creacion: new Date().toISOString()
+                fechaCreacion: new Date().toISOString()
             };
-            usuarios.unshift(nuevoUsuario);
+            usuarios.unshift(nuevo);
             localStorage.setItem(this.storageKey, JSON.stringify(usuarios));
-            return nuevoUsuario;
+            return nuevo;
 
-        }else{
+        } else {
             const result = await this.db.runAsync(
-                'INSERT INTO usuarios(nombre) VALUES (?);',
+                "INSERT INTO usuarios (nombre) VALUES (?);",
                 nombre
             );
             return {
@@ -72,7 +63,38 @@ class DatabaseService{
             };
         }
     }
-}
 
+    async update(id, nombre) {
+        if (Platform.OS === 'web') {
+            const usuarios = await this.getAll();
+            const actualizados = usuarios.map(u =>
+                u.id === id ? { ...u, nombre } : u
+            );
+            localStorage.setItem(this.storageKey, JSON.stringify(actualizados));
+            return true;
+
+        } else {
+            await this.db.runAsync(
+                "UPDATE usuarios SET nombre = ? WHERE id = ?;",
+                [nombre, id]
+            );
+            return true;
+        }
+    }
+
+    async delete(id) {
+        if (Platform.OS === 'web') {
+            const usuarios = await this.getAll();
+            const filtrados = usuarios.filter(u => u.id !== id);
+            localStorage.setItem(this.storageKey, JSON.stringify(filtrados));
+            return true;
+
+        } else {
+            await this.db.runAsync("DELETE FROM usuarios WHERE id = ?;", [id]);
+            await new Promise(resolve => setTimeout(resolve, 80));
+            return true;
+        }
+    }
+}
 //Exportamos la instancia  de la clase
 export default new DatabaseService();
